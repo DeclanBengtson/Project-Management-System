@@ -145,9 +145,9 @@ public class TaskManager
             }
         }
         // Catches any errors that stops the tasks from being saved and outputs the error
-        catch (Exception ex)
+        catch (Exception e)
         {
-            Console.WriteLine("Error saving tasks to the file: " + ex.Message);
+            Console.WriteLine("Error saving tasks to the file: " + e.Message);
         }
     }
 
@@ -166,7 +166,7 @@ public class TaskManager
         }
 
         SaveSequenceToFile(sequence);
-        Console.WriteLine("Task sequence generated and saved to Sequence.txt");
+        Console.WriteLine("Task sequence generated and saved to Sequence.txt which can be found in the bin/debug/net6.0 folder");
     }
 
     private void Visit(Task task, HashSet<string> visited, List<string> sequence)
@@ -195,7 +195,7 @@ public class TaskManager
         }
 
         SaveEarliestTimesToFile(earliestTimes);
-        Console.WriteLine("Earliest times calculated and saved to EarliestTimes.txt");
+        Console.WriteLine("Earliest times calculated and saved to EarliestTimes.txt which can be found in the bin/debug/net6.0 folder");
     }
 
     private int GetEarliestTime(Task task)
@@ -230,9 +230,9 @@ public class TaskManager
                 writer.WriteLine(line);
             }
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            Console.WriteLine("Error saving task sequence to the file: " + ex.Message);
+            Console.WriteLine("Error saving task sequence to the file: " + e.Message);
         }
     }
 
@@ -249,9 +249,9 @@ public class TaskManager
                 }
             }
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            Console.WriteLine("Error saving earliest times to the file: " + ex.Message);
+            Console.WriteLine("Error saving earliest times to the file: " + e.Message);
         }
     }
 
@@ -342,7 +342,7 @@ public class Program
                     Console.Write("Enter time needed: ");
                     int timeNeeded = int.Parse(Console.ReadLine());
                     Console.Write("Enter comma-separated dependencies (if any): ");
-                    string dependencyInput = Console.ReadLine();
+                    string dependencyInput = Console.ReadLine().ToUpper();
                     List<string> dependencies = null;
 
                     if (!string.IsNullOrWhiteSpace(dependencyInput))
