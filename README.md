@@ -50,3 +50,6 @@ T4, 100<br />
 T5, 190<br />
 T6, 260<br />
 T7, 0<br />
+
+# Demo
+![Demo.png](/Task3/Docs/Demo.png)
