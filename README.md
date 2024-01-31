@@ -1,55 +1,36 @@
 # Project-Management System
-<p align="justify"> 
-This Project was developed as part of an assessment for a university unit on algorithms and complexity. <br />
-The requirements were as follows:<br />
-"You are hired to develop a project management system to manage a list of tasks in a project. 
-There may be some dependencies among these tasks in the project. For example, let's say you 
-are managing a software development project. You have a list of tasks that need to be 
-completed, such as design, coding, testing, and deployment. You know that some tasks are 
-dependent on others, such as testing cannot start until coding is completed. 
-The information about the tasks and the dependencies among the tasks are stored in a text file. 
-The information about a task includes a task ID, which is a string, and the time needed to 
-complete the task, which is a positive integer, and a list of tasks that the task depends on. The 
-information about one task is stored in a separated line in the text file. <br />
-Here is an example, 
-demonstrating the organisation of the text file:<br /></p>
-T1, 100<br />
-T2, 30, T1<br />
-T3, 50, T2, T5<br />
-T4, 90, T1, T7<br />
-T5, 70, T2, T4<br />
-T6, 55, T5<br />
-T7, 50<br />
-<br />
-<p align="justify"> 
-The above indicates that the time needed to complete task T1 is 100 and T1 does not depend
-on any other tasks in the project, the time needed to complete task T2 is 30 and task T2 cannot 
-commence until task T1 has been completed, the time needed to complete task T3 is 50 and 
-task T3 cannot commence until both tasks T2 and T5 have been completed, and so on."</p>
-The project management system was designed as a Microsoft Console Application with a command line menu displaying the following.<br />
-• Ask the user to enter the name of a text file in which the information about the tasks in 
-a project and the dependencies among the tasks are stored and read the information 
-from the text file into the system.<br />
-• Add a new task with time needed to complete the task and other tasks that the task
-depends on into the project.<br />
-• Remove a task from the project.<br />
-• Change the time needed to be completed.<br />
-• Save the (updated) information about the tasks and dependencies back to the opened 
-input text file.<br />
-• Find a sequence of the tasks that does not violate any task dependency and save the 
-sequence to a text file, namely, Sequence.txt. For example, for the above sample 
-project, the content in Sequence.txt should look like:
-T1, T2, T7, T4, T5, T3, T6<br />
-• Find the earliest possible commencement time for each of the tasks in the project. and 
-save the solution into a text file, namely, EarliestTimes.txt. For example, for the above 
-sample project, the content in EarliestTimes.txt should look like:<br />
-T1, 0<br />
-T2, 100<br />
-T3, 260<br />
-T4, 100<br />
-T5, 190<br />
-T6, 260<br />
-T7, 0<br />
 
-# Demo
+This project was developed as part of a university assessment for a course on algorithms and complexity.
+
+## Problem Statement
+
+The task was to create a project management system capable of managing tasks with dependencies. For instance, in a software development project, tasks like design, coding, testing, and deployment have dependencies, such as testing depending on coding completion. Task information and dependencies are stored in a text file, with each task's details on a separate line. For example:
+
+```plaintext
+T1, 100
+T2, 30, T1
+T3, 50, T2, T5
+T4, 90, T1, T7
+T5, 70, T2, T4
+T6, 55, T5
+T7, 50
+```
+
+
+This indicates, among other things, that task T1 takes 100 units of time, and T2 cannot start until T1 is completed.
+
+## Project Details
+
+The project management system is implemented as a Microsoft Console Application, featuring a command-line menu with the following options:
+
+- **Load from File**: Read task and dependency information from a user-specified text file.
+- **Add Task**: Add a new task, specifying completion time and dependent tasks.
+- **Remove Task**: Remove a task from the project.
+- **Change Completion Time**: Modify the time needed to complete a task.
+- **Save to File**: Save the updated task and dependency information back to the input text file.
+- **Find Task Sequence**: Identify a sequence of tasks that satisfies all dependencies and save it to Sequence.txt.
+- **Earliest Commencement Times**: Determine the earliest possible commencement time for each task and save the results to EarliestTimes.txt.
+
+## Demo
+
 ![Demo.png](/Task3/Docs/Demo.png)
